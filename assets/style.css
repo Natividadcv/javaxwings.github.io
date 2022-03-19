@@ -10,3 +10,10 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* 1da3f1 */
+.titulo {
+  color: orange;
+  text-align: center;
+  font-size: 57px;
+}
