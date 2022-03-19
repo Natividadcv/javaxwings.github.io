@@ -6,22 +6,50 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Java Swing</title>
+
+  <!-- BULMA -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+  <!-- CUSTON CSS -->
   <link rel="stylesheet" href="assets/style.css">
+
 
   <!-- Tamaño recomendado icono, mas grande 1024*1024 -->
   <!-- Para Escritorio -->
-  <link rel="icon" href="img/favicon.png">
-  <!-- Para Movil -->
-  <link rel="apple-touch-icon" href="img/favicon.png">
+  <link rel="icon" href="img/icon/icons8_java.svg" <!--Para Movil -->
+  <link rel="apple-touch-icon" href="img/icon/icons8_java.svg">
 </head>
 
-<body>
+<body class="container">
+
+  <div id="home">
+    <nav class="nav-main">
+      <a href="index.html"><img src="img/icon/icons8_java.svg" alt="Logo Java" class="nav-brand"></a>
+      <ul class="nav-menu">
+        <li><a href="">Inicio</a></li>
+        <li><a href="index.html#inicio">Temario</a></li>
+        <li><a href="sobre.html">Acerca de</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+
+      <ul class="nav-menu-rigth">
+        <li><a href=""> <i class="fas fa-search"></i> </a></li>
+      </ul>
+    </nav>
+    <hr>
+
+
+    <!-- Imagen  Banner -->
+    <div class="showcase">
+      <a href="#" class="btn">Aprender más <i class="fa fas fa-angle-double-right"></i></a>
+    </div>
+  </div>
+
 
   <header>
-    <h1 class="titulo">Java Swing libreria JOptionPane</h1>
-    <img class="icono-header" src="img/icon/icons8_java.svg" alt="Icono de Java">
-
-    <h2 id="inicio">Temas a tratar</h2>
+    <h1 class=" title titulo">Java Swing libreria JOptionPane</h1>
+    <h2 id="inicio" class="title">Temas a tratar</h2>
     <ul>
       <li> <a href="index.html#qjop">¿Qué es JOptionPane? </a> </li>
       <li> <a href="index.html#tmjop">Tipos de mensaje en JOptionPane</a> </li>
@@ -32,172 +60,198 @@
       <li> <a href="index.html#ejecucion">Ejecución del programa</a> </li>
       <li> <a href="index.html#vsd">Ventajas y desventajas de JOptionPane</a></li>
     </ul>
-    <hr>
 
-
-
-
-    <nav>
-
-    </nav>
   </header>
+
+
+
 
 
 
   <main>
 
-    <section>
-      <h2>
-        <h2 id="qjop">¿Qué es JOptionPane?</h2>
-      </h2>
-      <article>
-        <p>JOptionPane es una clase que nos provee una conjunto de ventanas de dialogo que es ideal, para mostrar
-          mensajes al
-          usuario. Ya sean informativos, advertencias, errores, confirmaciones… O incluso tenemos la posibilidad de
-          solicitar la
-          introducción de un dato.</p>
-        <p>Esta clase la encontramos dentro del paquete javax.swing. Y para que funcione, y que no nos muestre un error
-          el IDE,
-          debemos importar la librería. Para ello, tenemos dos opciones:</p>
 
-        <ul>
-          <li>Importar únicamente la librería especifica de JOptionPane.</li>
-          <li>Importar el conjunto de librerías que engloban a la totalidad de Swing.</li>
-        </ul>
+    <details>
+      <summary class="title" id="qjop">¿Qué es JOptionPane?</summary>
+      <section>
 
-        <p>Si solamente vamos a trabajar con JOptionPane, es aconsejable utilizar la que solo importa dicha clase y no
-          todas las
-          librerias de Swing. Ya que de esta manera optimizamos mejor los recursos.</p>
-
-        <p>También, hay que destacar que es una clase estática (ya que no instanciamos nada para poder utilizarla).</p>
-        <a href="index.html#inicio">🔼</a>
-
-        <hr>
-
-        <h2 id="tmjop">Tipos de mensaje en JOptionPane</h2>
-        <p>JOptionPane tiene diferentes ventanas de dialogo, entre las que se encuentran:
-        </p>
-        <ul>
-          <li> <strong>JOptionPane.showMessageDialog()</strong> nos permite mostrar un mensaje.</li>
-          <li> <strong>JOptionPane.showInputDialog()</strong> nos permite la entrada de datos (similar al famoso Scanner
-            de la consola). </li>
-          <li> <strong>JOptionPane.ConfirmDialog()</strong> nos permite hacer preguntas con varías confirmaciones. Por
-            ejemplo: Sí, No, Cancelar.</li>
-          <li> <strong>JOptionPane.showOptionDialog()</strong> engloba/unifica los 3 anteriores diálogos.</li>
-        </ul>
-        <a href="index.html#inicio">🔼</a>
-
-        <hr>
-      </article>
-    </section>
-
-
-
-    <section>
-      <h2 id="JOptionPane">Ejemplos ShowMessageDialog</h2>
-      <article>
-        <h3>Ejemplos Java Swing</h3>
-        <p>
-          JOptionPane es una clase de java, del paquete javax.swing, que nos permite generar cuadros de diálogo para
-          interactuar
-          con el usuario.
-        </p>
-        <p>
-          En esta entrada vamos a ver ejemplos del método estático <strong>ShowMessageDialog</strong>, que nos provee de
-          un cuadro de
-          diálogo con
-          un único botón de Aceptar para poder mostrar un mensaje.
-        </p>
-        <p>
-          El método está sobrecargado con dos, cuatro y cinco parámetros.
-        </p>
-        <pred>
-          <code>
-              JOptionPane.showMessageDialog(Component parentComponent,
-              Object message,
-              String title,
-              int messageType,
-              Icon icon);
-            </code>
-        </pred>
-
-
-        <ol>
-          <li>Componente sobre el que se abre el cuadro de diálogo.</li>
-          <li>Mensaje que queremos mostrar.</li>
-          <li>Título del cuadro de diálogo.</li>
-          <li>Variable int de la clase JOptionPane que representa el icono que se muestra.</li>
-          <span>Tenemos las constantes en JOptionPane:</span>
+        <article>
+          <p>JOptionPane es una clase que nos provee una conjunto de ventanas de dialogo que es ideal, para mostrar
+            mensajes al
+            usuario. Ya sean informativos, advertencias, errores, confirmaciones… O incluso tenemos la posibilidad de
+            solicitar la
+            introducción de un dato.</p>
+          <p>Esta clase la encontramos dentro del paquete javax.swing. Y para que funcione, y que no nos muestre un
+            error
+            el IDE,
+            debemos importar la librería. Para ello, tenemos dos opciones:</p>
 
           <ul>
-            <li> <strong>INFORMATION_MESSAGE.</strong> Icono de información. </li>
-            <li> <strong>WARNING_MESSAGE.</strong> Icono de advertencia.</li>
-            <li> <strong>ERROR_MESSAGE.</strong> Icono de error</li>
-            <li> <strong>QUESTION_MESSAGE.</strong> Icono de pregunta.</li>
-            <li> <strong>PLAIN_MESSAGE.</strong> Sin icono</li>
-            <li> <strong>DEFAULT_OPTION.</strong> Sin icono.</li>
+            <li>Importar únicamente la librería especifica de JOptionPane.</li>
+            <li>Importar el conjunto de librerías que engloban a la totalidad de Swing.</li>
           </ul>
 
-          <li>Icono personalizado para mostrar en el cuadro.</li>
+          <p>Si solamente vamos a trabajar con JOptionPane, es aconsejable utilizar la que solo importa dicha clase y no
+            todas las
+            librerias de Swing. Ya que de esta manera optimizamos mejor los recursos.</p>
+
+          <p>También, hay que destacar que es una clase estática (ya que no instanciamos nada para poder utilizarla).
+          </p>
+          <a href="index.html#inicio">🔼</a>
+
+          <hr>
+          <hr>
+        </article>
+      </section>
+
+    </details>
 
 
-        </ol>
-        <p>
-          En el ejemplo de icono personalizado, crearemos un objeto de la clase ImageIcon indicándole la ruta del
-          fichero (en
-          nuestro caso resources/parentesisIcono.png), que pasaremos como parámetro.
-        </p>
-
-        <p>A continuación los distintos ejemplos y como se muestran por pantalla.</p>
-        <a href="index.html#inicio">🔼</a>
-        <hr>
-
-
-        <h2 id="ejecucion">Ejecución del programa:</h2>
-        <img src="img/Performence/1 (Mediana).png" alt="Código de ejemplo de java, usando la libreria Java Swing">
-        <hr>
-        <img src="img/Performence/2 (Mediana).png" alt="Código de ejemplo de java, usando la libreria Java Swing">
-        <hr>
-        <img src="img/Performence/3 (Mediana).png" alt="Código de ejemplo de java, usando la libreria Java Swing">
-        <hr>
-        <img src="img/Performence/4 (Mediana).png" alt="Código de ejemplo de java, usando la libreria Java Swing">
-        <hr>
-        <img src="img/Performence/5 (Mediana).png" alt="Código de ejemplo de java, usando la libreria Java Swing">
-        <hr>
-        <img src="img/Performence/6 (Mediana).png" alt="Código de ejemplo de java, usando la libreria Java Swing">
-        <hr>
-        <img src="img/Performence/7 (Mediana).png" alt="Código de ejemplo de java, usando la libreria Java Swing">
-        <hr>
-        <h2>Codigo Completo</h2>
-        <img src="img/Performence/code-full (Mediana).png"
-          alt="Código de ejemplo de java, usando la libreria Java Swing">
-      </article>
+    <details>
+      <summary id="tmjop" class="title">Tipos de mensaje en JOptionPane</summary>
+      <p>JOptionPane tiene diferentes ventanas de dialogo, entre las que se encuentran:
+      </p>
+      <ul>
+        <li> <strong>JOptionPane.showMessageDialog()</strong> nos permite mostrar un mensaje.</li>
+        <li> <strong>JOptionPane.showInputDialog()</strong> nos permite la entrada de datos (similar al famoso
+          Scanner
+          de la consola). </li>
+        <li> <strong>JOptionPane.ConfirmDialog()</strong> nos permite hacer preguntas con varías confirmaciones. Por
+          ejemplo: Sí, No, Cancelar.</li>
+        <li> <strong>JOptionPane.showOptionDialog()</strong> engloba/unifica los 3 anteriores diálogos.</li>
+      </ul>
       <a href="index.html#inicio">🔼</a>
-    </section>
+    </details>
 
-    <hr>
+    <details>
+      <summary id="JOptionPane" class="title">Ejemplos ShowMessageDialog</summary>
+      <section>
+        <article>
 
-    <section>
-      <h2 id="vsd">Ventajas y desventajas de JOptionPane</h2>
-      <article>
-        <h3>Ventanjas de JOptionPane:</h3>
-        <ul>
-          <li>Simple.</li>
-          <li>Flexible.</li>
-          <li>Rápido.</li>
-          <li>No requiere grandes conocimientos de interfaces para su uso.</li>
-        </ul>
+          <article>
+            <h3 class="subtitle">Ejemplos Java Swing</h3>
+            <p>
+              JOptionPane es una clase de java, del paquete javax.swing, que nos permite generar cuadros de diálogo para
+              interactuar
+              con el usuario.
+            </p>
+            <p>
+              En esta entrada vamos a ver ejemplos del método estático <strong>ShowMessageDialog</strong>, que nos
+              provee de
+              un cuadro de
+              diálogo con
+              un único botón de Aceptar para poder mostrar un mensaje.
+            </p>
+            <p>
+              El método está sobrecargado con dos, cuatro y cinco parámetros.
+            </p>
+            <pred>
+              <code>
+                        JOptionPane.showMessageDialog(Component parentComponent,
+                        Object message,
+                        String title,
+                        int messageType,
+                        Icon icon);
+                      </code>
+            </pred>
 
-        <h3>Desventajas de JOptionPane:</h3>
-        <ul>
-          <li>Se crea mediante a métodos estáticos, por eso, no hace falta instanciar nada.</li>
-          <li>No es muy potente, solamente muestra mensajes de diálogos simples. Si queremos realizar diálogos más
-            complejos, es donde
-            entraría en juego Jframe, del que hablaremos más adelante.</li>
-        </ul>
-        <a href="index.html#inicio">🔼</a>
-      </article>
-    </section>
+
+
+            <ol>
+              <li>Componente sobre el que se abre el cuadro de diálogo.</li>
+              <li>Mensaje que queremos mostrar.</li>
+              <li>Título del cuadro de diálogo.</li>
+              <li>Variable int de la clase JOptionPane que representa el icono que se muestra.</li>
+              <span>Tenemos las constantes en JOptionPane:</span>
+
+              <ul>
+                <li> <strong>INFORMATION_MESSAGE.</strong> Icono de información. </li>
+                <li> <strong>WARNING_MESSAGE.</strong> Icono de advertencia.</li>
+                <li> <strong>ERROR_MESSAGE.</strong> Icono de error</li>
+                <li> <strong>QUESTION_MESSAGE.</strong> Icono de pregunta.</li>
+                <li> <strong>PLAIN_MESSAGE.</strong> Sin icono</li>
+                <li> <strong>DEFAULT_OPTION.</strong> Sin icono.</li>
+              </ul>
+
+              <li>Icono personalizado para mostrar en el cuadro.</li>
+
+
+            </ol>
+            <p>
+              En el ejemplo de icono personalizado, crearemos un objeto de la clase ImageIcon indicándole la ruta del
+              fichero (en
+              nuestro caso resources/parentesisIcono.png), que pasaremos como parámetro.
+            </p>
+
+            <p>A continuación los distintos ejemplos y como se muestran por pantalla.</p>
+            <a href="index.html#inicio">🔼</a>
+            <hr>
+
+          </article>
+      </section>
+      <section>
+    </details>
+
+
+    <details>
+      <summary class="title" id="ejecucion">Ejecución del programa</summary>
+      <section>
+        <article>
+          <img src="img/Performence/1 (Mediana).png" alt="Código de ejemplo de java, usando la libreria Java Swing">
+
+          <hr>
+          <img src="img/Performence/2 (Mediana).png" alt="Código de ejemplo de java, usando la libreria Java Swing">
+          <hr>
+          <img src="img/Performence/3 (Mediana).png" alt="Código de ejemplo de java, usando la libreria Java Swing">
+          <hr>
+          <img src="img/Performence/4 (Mediana).png" alt="Código de ejemplo de java, usando la libreria Java Swing">
+          <hr>
+          <img src="img/Performence/5 (Mediana).png" alt="Código de ejemplo de java, usando la libreria Java Swing">
+          <hr>
+          <img src="img/Performence/6 (Mediana).png" alt="Código de ejemplo de java, usando la libreria Java Swing">
+          <hr>
+          <img src="img/Performence/7 (Mediana).png" alt="Código de ejemplo de java, usando la libreria Java Swing">
+          <hr>
+          <h2 class="title">Codigo Completo</h2>
+          <img src="img/Performence/code-full (Mediana).png"
+            alt="Código de ejemplo de java, usando la libreria Java Swing">
+          <a href="index.html#inicio">🔼</a>
+          <hr>
+        </article>
+      </section>
+    </details>
+
+
+
+
+    <details>
+      <summary id="vsd" class="title">Ventajas y desventajas de JOptionPane</summary>
+      <section>
+        <article>
+          <h3 class="subtitle">Ventanjas de JOptionPane:</h3>
+          <ul>
+            <li>Simple.</li>
+            <li>Flexible.</li>
+            <li>Rápido.</li>
+            <li>No requiere grandes conocimientos de interfaces para su uso.</li>
+            <br>
+          </ul>
+
+          <h3 class="subtitle">Desventajas de JOptionPane:</h3>
+          <ul>
+            <li>Se crea mediante a métodos estáticos, por eso, no hace falta instanciar nada.</li>
+            <li>No es muy potente, solamente muestra mensajes de diálogos simples. Si queremos realizar diálogos más
+              complejos, es donde
+              entraría en juego Jframe, del que hablaremos más adelante.</li>
+          </ul>
+          <br>
+          <a href="index.html#inicio">🔼</a>
+
+        </article>
+      </section>
+    </details>
+
+
 
 
 
@@ -217,8 +271,12 @@
 
 
 
+
+
   <footer>
   </footer>
+
+  <script src="assets/main.js"></script>
 </body>
 
 </html>
