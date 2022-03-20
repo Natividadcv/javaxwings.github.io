@@ -10,8 +10,16 @@ body {
   margin: auto;
 }
 
+summary {
+  cursor: pointer;
+}
+
 header {
   padding: 15px;
+}
+
+header ul li {
+  font-size: 24px;
 }
 
 a {
@@ -43,7 +51,7 @@ a {
 }
 
 .nav-main ul li a {
-  padding: 2px;
+  padding: 9px;
 }
 
 .nav-main ul li a:hover {
@@ -75,6 +83,7 @@ hr {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+  border-radius: 15px;
 }
 
 .btn {
@@ -110,7 +119,7 @@ img {
 
 /* Estilos de Acerca de */
 .hero.is-link {
-  border-radius: 7px;
+  border-radius: 17px;
 }
 
 .hea {
